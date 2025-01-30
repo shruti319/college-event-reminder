@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Event Reminder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">College Events</div>
+        <div class="nav-links">
+            <a href="#" id="homeLink">Home</a>
+            <a href="#" id="loginLink">Login</a>
+            <a href="#" id="registerLink">Register</a>
+        </div>
+    </nav>
+
+    <div id="mainContent">
+        <!-- Login Form -->
+        <div class="form-container" id="loginForm">
+            <h2>Login</h2>
+            <form id="userLoginForm">
+                <select name="role" id="roleSelect">
+                    <option value="student">Student</option>
+                    <option value="coordinator">Event Coordinator</option>
+                </select>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+
+        <!-- Events Display Section -->
+        <div class="events-container" id="eventsSection">
+            <h2>Upcoming Events</h2>
+            <div id="eventsList"></div>
+        </div>
+    </div>
+
+    <!-- In index.html, add name attributes to the form inputs -->
+<form id="userLoginForm">
+    <select name="role" id="roleSelect">
+        <option value="student">Student</option>
+        <option value="coordinator">Event Coordinator</option>
+    </select>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <button type="submit">Login</button>
+</form>
+<!-- Add to index.html -->
+<div class="dashboard" id="coordinatorDashboard" style="display: none;">
+    <h2>Event Coordinator Dashboard</h2>
+    <form id="createEventForm">
+        <input type="text" name="title" placeholder="Event Title" required>
+        <textarea name="description" placeholder="Description" required></textarea>
+        <input type="date" name="date" required>
+        <input type="time" name="time" required>
+        <input type="text" name="venue" placeholder="Venue" required>
+        <input type="number" name="maxParticipants" placeholder="Max Participants" required>
+        <select name="category">
+            <option value="academic">Academic</option>
+            <option value="cultural">Cultural</option>
+            <option value="sports">Sports</option>
+            <option value="technical">Technical</option>
+        </select>
+        <button type="submit">Create Event</button>
+    </form>
+</div>
+
+    <script src="app.js"></script>
+</body>
+</html>
