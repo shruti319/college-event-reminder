@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Event Reminder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">College Events</div>
+        <div class="nav-links">
+            <a href="#" id="homeLink">Home</a>
+            <a href="#" id="loginLink">Login</a>
+            <a href="#" id="registerLink">Register</a>
+            <a href="#" onclick="logout()" id="logoutLink">Logout</a>
+        </div>
+    </nav>
+    <div id="mainContent">
+        <!-- Registration Form -->
+        <div class="form-container" id="registrationForm">
+            <h2>Register</h2>
+            <form id="userRegistrationForm">
+                <input type="text" name="fullName" placeholder="Full Name" required>
+                <input type="text" name="studentId" placeholder="Student ID" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="tel" name="phone" placeholder="Phone Number" required>
+                <input type="text" name="department" placeholder="Department" required>
+                <input type="text" name="year" placeholder="Year of Study" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <input type="password" name="confirmPassword" placeholder="Confirm Password" required>
+                <button type="submit">Register</button>
+                <p class="form-footer">Already have an account? <a href="#" id="switchToLogin">Login here</a></p>
+            </form>
+        </div>
+        
+
+        <div class="form-container" id="loginForm" style="display: none;">
+            <h2>Login</h2>
+            <form id="userLoginForm">
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <select name="role" required>
+                    <option value="">Select Role</option>
+                    <option value="student">Student</option>
+                    <option value="coordinator">Event Coordinator</option>
+                </select>
+                <button type="submit">Login</button>
+                <p class="form-footer">Don't have an account? <a href="#" id="switchToRegister">Register here</a></p>
+            </form>
+        </div>
+
+<!-- Add this inside your eventsSection div -->
+<div class="events-container" id="eventsSection" style="display: none;">
+    <h2>Upcoming Events</h2>
+    
+    <!-- Category Filter -->
+    <div class="filter-container">
+        <select id="categoryFilter">
+            <option value="">All Categories</option>
+            <option value="academic">Academic</option>
+            <option value="cultural">Cultural</option>
+            <option value="sports">Sports</option>
+            <option value="technical">Technical</option>
+        </select>
+    </div>
+
+    <!-- Event Cards Container -->
+    <div id="eventsList" class="events-grid"></div>
+</div>
+
+        <!-- Coordinator Dashboard -->
+        <div class="dashboard" id="coordinatorDashboard" style="display: none;">
+            <h2>Create New Event</h2>
+            <form id="createEventForm" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label>Event Flyer Image (JPEG/PNG, max 2MB)</label>
+                    <input type="file" name="flyer" accept="image/*" required>
+                </div>
+                <input type="text" name="title" placeholder="Event Title" required>
+                <textarea name="description" placeholder="Event Description" required></textarea>
+                <input type="date" name="date" required>
+                <input type="time" name="time" required>
+                <input type="text" name="venue" placeholder="Venue" required>
+                <input type="number" name="maxParticipants" placeholder="Maximum Participants" required>
+                <select name="category" required>
+                    <option value="">Select Category</option>
+                    <option value="academic">Academic</option>
+                    <option value="cultural">Cultural</option>
+                    <option value="sports">Sports</option>
+                    <option value="technical">Technical</option>
+                </select>
+                <button type="submit">Create Event</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
